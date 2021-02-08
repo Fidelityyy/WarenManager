@@ -8,6 +8,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by User on 2/28/2017.
  */
@@ -66,11 +70,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      *
      * @return
      */
-    public Cursor getData() {
+    public ArrayList<Produkt> getData() {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT * FROM " + TABLE_NAME;
         Cursor data = db.rawQuery(query, null);
-        return data;
+        ArrayList<Produkt> produkte = new ArrayList<Produkt>();
+        Produkt produkt;
+        while(data.moveToNext()) {
+            produkt = new Produkt(data.getString(data.getColumnIndex(COL2)), data.getInt(data.getColumnIndex(COL4)), data.getDouble(data.getColumnIndex(COL3)), data.getInt(data.getColumnIndex(COL1)));
+            produkte.add(produkt);
+        }
+        return produkte;
     }
 
     /**
