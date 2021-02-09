@@ -42,6 +42,12 @@ public class ListDataActivity extends AppCompatActivity {
         populateListView();
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent back = new Intent(ListDataActivity.this, MainActivity.class);
+        startActivity(back);
+    }
+
     private void populateListView() {
         Log.d(TAG, "populateListView: Displaying data in the ListView.");
 

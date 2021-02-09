@@ -3,14 +3,11 @@ package com.tabian.saveanddisplaysql;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import java.io.PrintStream;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by User on 2/28/2017.
@@ -68,7 +65,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     /**
      * Returns all the data from database
      *
-     * @return
+     * @return ArrayList
      */
     public ArrayList<Produkt> getData() {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -107,7 +104,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void updateName(String newName, int id, String oldName, double preis, int anzahl) {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "UPDATE " + TABLE_NAME + " SET " + COL2 +
-                " = '" + newName + "', " + COL3 + " = '" + preis + "', " + COL4 + " = '" + anzahl + "' WHERE " + COL1 + " = '" + id + "'" +
+                " = '" + newName + "' ," + COL3 + " = " + preis + " ," + COL4 + " = " + anzahl + " WHERE " + COL1 + " = '" + id + "'" +
                 " AND " + COL2 + " = '" + oldName + "'";
         Log.d(TAG, "updateName: query: " + query);
         Log.d(TAG, "updateName: Setting name to " + newName);
@@ -124,7 +121,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "DELETE FROM " + TABLE_NAME + " WHERE "
                 + COL1 + " = '" + id + "'" +
-                " AND " + COL2 + " = '" + name + "'"/** + " AND " + COL3 + " = '" + preis + "'" + " AND " + COL4 + " = '" + anzahl + "'"*/;
+                " AND " + COL2 + " = '" + name + "'";
         Log.d(TAG, "deleteName: query: " + query);
         Log.d(TAG, "deleteName: Deleting " + name + " from database.");
         db.execSQL(query);
