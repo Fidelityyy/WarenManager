@@ -31,8 +31,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String newEntry = produktNameFeld.getText().toString();
-                int anzahl = Integer.parseInt(anzahlFeld.getText().toString());
-                double preis = Double.parseDouble(preisFeld.getText().toString());
+//                int anzahl = Integer.parseInt(anzahlFeld.getText().toString());
+//                double preis = Double.parseDouble(preisFeld.getText().toString());
+                int anzahl;
+                double preis;
+                if(anzahlFeld.getText().toString().equals("")) {
+                    anzahl = 0;
+                } else {
+                    anzahl = Integer.parseInt(anzahlFeld.getText().toString());
+                }
+
+                if(preisFeld.getText().toString().equals("")) {
+                    preis = 0;
+                } else {
+                    preis = Double.parseDouble(preisFeld.getText().toString());
+                }
+
                 if (produktNameFeld.length() != 0 || anzahlFeld.length() != 0 || preisFeld.length() != 0) {
                     AddData(newEntry, anzahl, preis);
                     produktNameFeld.setText("");

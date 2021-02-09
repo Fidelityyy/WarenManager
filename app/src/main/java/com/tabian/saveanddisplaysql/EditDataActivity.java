@@ -98,4 +98,10 @@ public class EditDataActivity extends AppCompatActivity {
     private void toastMessage(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent back = new Intent(EditDataActivity.this, ListDataActivity.class);
+        startActivity(back);
+    }
 }
