@@ -103,9 +103,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      */
     public void updateName(String newName, int id, String oldName, double preis, int anzahl) {
         SQLiteDatabase db = this.getWritableDatabase();
+
+
+//        String query = "UPDATE " + TABLE_NAME + " SET " + COL2 +
+//                " = '" + newName + "' ," + COL3 + " = " + preis + " ," + COL4 + " = " + anzahl + " WHERE " + COL1 + " = '" + id + "'" +
+//                " AND " + COL2 + " = '" + oldName + "'";
         String query = "UPDATE " + TABLE_NAME + " SET " + COL2 +
-                " = '" + newName + "' ," + COL3 + " = " + preis + " ," + COL4 + " = " + anzahl + " WHERE " + COL1 + " = '" + id + "'" +
+                " = '" + newName + "', " + COL3 + " = '" + preis + "', " + COL4 + " = '" + anzahl + "' WHERE " + COL1 + " = '" + id + "'" +
                 " AND " + COL2 + " = '" + oldName + "'";
+
         Log.d(TAG, "updateName: query: " + query);
         Log.d(TAG, "updateName: Setting name to " + newName);
         db.execSQL(query);

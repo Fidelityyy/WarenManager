@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -54,6 +55,9 @@ public class EditDataActivity extends AppCompatActivity {
 
         selectedAnzahl = receivedIntent.getIntExtra("anzahl", 0);
 
+        Log.d(TAG, String.valueOf(selectedAnzahl));
+        Log.d(TAG, String.valueOf(selectedPreis));
+
         //set the text to show the current selected name
         editable_item.setText(selectedName);
         editAnzahl.setText(Integer.toString(selectedAnzahl));
@@ -66,7 +70,7 @@ public class EditDataActivity extends AppCompatActivity {
                 String preis = editPreis.getText().toString();
                 String anzahl = editAnzahl.getText().toString();
                 if (!item.equals("") || !preis.equals("") || !anzahl.equals("")) {
-                    mDatabaseHelper.updateName(item, selectedID, selectedName, selectedPreis, selectedAnzahl);
+                    mDatabaseHelper.updateName(item, selectedID, selectedName, Double.parseDouble(preis), Integer.parseInt(anzahl));
                     Intent intent = new Intent(EditDataActivity.this, ListDataActivity.class);
                     startActivity(intent);
                 } else {
