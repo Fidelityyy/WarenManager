@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.lang.reflect.Array;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -65,7 +66,8 @@ public class ListDataActivity extends AppCompatActivity {
         }
 
         EditText ergebnisFeld = (EditText) findViewById(R.id.ergebnisFeld);
-        ergebnisFeld.setText(Double.toString(ergebnis));
+        DecimalFormat df = new DecimalFormat("###.##");
+        ergebnisFeld.setText(/**Double.toString(ergebnis)*/df.format(ergebnis));
         //set an onItemClickListener to the ListView
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

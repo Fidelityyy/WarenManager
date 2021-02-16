@@ -12,10 +12,9 @@
 
         <TextView
             android:id="@+id/name"
-            android:layout_alignParentTop="true"
+            android:layout_width="75mm"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_weight=".33"
+            android:layout_alignParentTop="true"
             android:text="Produktname"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@android:color/black" />
@@ -23,17 +22,16 @@
 
         <TextView
             android:id="@+id/preis"
-            android:layout_below="@+id/name"
+            android:layout_width="75.333mm"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_weight=".33"
+            android:layout_below="@+id/name"
             android:text="Preis"
             android:textColor="@android:color/black" />
+
         <TextView
             android:id="@+id/anzahl"
+            android:layout_width="75.333mm"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_weight=".33"
             android:text="Anzahl"
             android:textAppearance="?android:attr/textAppearanceButton"
             android:textColor="@android:color/black" />

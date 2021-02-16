@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SaveAndDisplaySQL.iml" filepath="$PROJECT_DIR$/.idea/modules/SaveAndDisplaySQL.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SaveAndDisplaySQL.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SaveAndDisplaySQL.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Prinz_Warenmanager.iml" filepath="$PROJECT_DIR$/.idea/modules/Prinz_Warenmanager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Prinz_Warenmanager.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Prinz_Warenmanager.app.iml" />
     </modules>
   </component>
 </project>

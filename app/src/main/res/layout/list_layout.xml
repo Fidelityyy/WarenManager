@@ -16,12 +16,13 @@
     <EditText
         android:id="@+id/ergebnisFeld"
         android:layout_width="match_parent"
-        android:layout_height="20pt"
-        android:layout_marginTop="-20pt"
+        android:layout_height="25pt"
+        android:layout_marginTop="-25pt"
         android:focusable="false"
         android:hint="Ergebnis"
         android:inputType="numberDecimal"
         android:textAlignment="center"
+        android:textSize="16sp"
         android:textStyle="bold" />
 
 </LinearLayout>
